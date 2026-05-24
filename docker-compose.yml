@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  pyspark-jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: proyecto_final_ml
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./bloque1_eda:/home/jovyan/work/bloque1_eda
+      - ./bloque2_ml:/home/jovyan/work/bloque2_ml
+      - ./bloque3_nlp:/home/jovyan/work/bloque3_nlp
+      - ./datos:/home/jovyan/work/datos
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    # Sin token para acceso directo desde el navegador o VS Code
+    command: start-notebook.sh --NotebookApp.token=''
+    # Memoria compartida para PySpark (evita errores con datasets grandes)
+    shm_size: '2g'
