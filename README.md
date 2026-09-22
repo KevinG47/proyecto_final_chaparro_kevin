@@ -1,4 +1,4 @@
-# Proyecto Final — Machine Learning con PySpark y Docker
+#Machine Learning con PySpark y Docker
 
 **Curso:** Machine Learning con PySpark y Docker | 2026-I  
 **Estudiante:** Kevin Leonardo Chaparro Reyes  
